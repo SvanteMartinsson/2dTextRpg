@@ -1,0 +1,24 @@
+package com.shooter.core;
+
+import java.util.Scanner;
+
+public class Uppgift6 {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		String inOrd;
+		String[] ord = new String[4];
+		
+		ord[0] = "hund";
+		ord[1] = "musik";
+		ord[2] = "sol";
+		ord[3] = "hej";
+		ord[4] = "nej";
+		
+		inOrd = scanner.nextLine();
+
+	}
+
+}

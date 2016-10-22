@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Uppgift1 {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		float längd = 0;
+		
+		System.out.print("Skriv in längd: ");
+		
+		try{
+		längd = input.nextFloat();
+		}catch(Exception e){
+			System.out.println("Du kan endast skriva in siffror!");
+		}
+		
+		
+
+	}
+
+}

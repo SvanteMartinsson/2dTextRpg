@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		int x;
+		int y;
+		int z;
+		
+		x = scanner.nextInt();
+		y = scanner.nextInt();
+		z = scanner.nextInt();
+		
+		if(x < z && x < y){
+			System.out.println(x);
+		}else if(z < x && z < y){
+			System.out.println(z);
+		}else if(y < x && y < z){
+			System.out.println(y);
+		}
+		
+	}
+	
+	  
+
+}

@@ -1,0 +1,12 @@
+package com.shooter.core;
+
+public class Uppgift6 {
+
+	public static void main(String[] args) {
+		
+		String[] ord = new String[4];
+		
+
+	}
+
+}

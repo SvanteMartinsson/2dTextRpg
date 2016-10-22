@@ -1,0 +1,32 @@
+import java.util.Random;
+
+public class Uppgift7 {
+
+	public static void main(String[] args) {
+		Random r = new Random();
+		
+		int tärning1;
+		int tärning2;
+		
+		tärning1 = r.nextInt(6) + 1;
+		tärning2 = r.nextInt(6) + 1;
+		
+		int par;
+		
+		System.out.println("Tärning 1: " + tärning1 + " Tärning 2: " + tärning2);
+		
+		if(tärning1 == 1 && tärning2 == 6){
+			System.out.println("Dubbelvinst: " + 3*7);
+		}else if(tärning1 + tärning2 == 7){
+			System.out.println("Vinst: " + 7*2);
+		}else if(tärning1 == tärning2){
+			par = tärning1 + tärning2;
+			System.out.println("Par: " + par);
+		}else{
+			System.out.println("förlust");
+		}
+		
+
+	}
+
+}

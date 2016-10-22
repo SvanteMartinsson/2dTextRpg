@@ -1,0 +1,23 @@
+
+public class Uppgift1 {
+
+	public static void main(String[] args) {
+		int[] nummer = new int[5];
+		
+		int x = 0;
+		
+		while(x<6){
+			System.out.println(x);
+			x++;
+		}
+		
+		x=0;
+		
+		do{
+			System.out.println(x);
+			x++;
+		}while(x<5);
+
+	}
+
+}

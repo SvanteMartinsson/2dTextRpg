@@ -1,0 +1,21 @@
+import java.util.Random;
+
+public class Uppgift7 {
+
+	public static void main(String[] args) {
+		Random r = new Random();
+		
+		int tärning1;
+		int tärning2;
+		
+		tärning1 = r.nextInt(6) + 1;
+		tärning2 = r.nextInt(6) + 1;
+		
+		if(tärning1 == 1 && tärning2 == 6){
+			System.out.println("Vinst: " + 3*7);
+		}
+		
+
+	}
+
+}

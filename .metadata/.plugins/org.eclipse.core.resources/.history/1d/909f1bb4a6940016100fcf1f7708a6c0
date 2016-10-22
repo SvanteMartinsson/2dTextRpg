@@ -1,0 +1,132 @@
+package com.shooter.core;
+
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferStrategy;
+import java.util.Formatter;
+import java.util.Random;
+
+
+public class Main extends Canvas{
+	
+	// Window variables
+	static final int WIDTH = 1024;
+	static final int HEIGHT = 768;
+	static final String title = "Zombie shooter";
+	
+	int wave = 1;
+	int lastWave = 1;
+	
+	private boolean isRunning = false;
+	
+	private BufferStrategy buffer;
+	
+	private Handler handler;
+	
+	private Spawner spawn;
+	
+	int kills = 0;
+	int neededKills = 4;
+	
+	SaveGame saveGame;
+	
+	Formatter saveFile;
+	
+	Player player;
+	
+	Random r = new Random();
+	
+	HUD hud = new HUD();
+	
+	
+	public Main(){
+		isRunning = true;
+		try{
+			saveFile = new Formatter("save.txt");
+		}catch(Exception e){
+			System.out.println("Error!");
+		}
+		handler = new Handler();
+		spawn = new Spawner(handler, this, hud);
+		handler.addObject(player = new Player(100, 100, handler, ID.Player, hud));
+		saveGame = new SaveGame(this, hud);
+		this.addKeyListener(new KeyInput(handler));
+		Window window = new Window(WIDTH, HEIGHT, title, this);
+		this.createBufferStrategy(3);
+		buffer = this.getBufferStrategy();
+		gameLoop();
+	}
+
+	public static void main(String[] args) {
+		new Main();
+	}
+	
+	public void gameLoop(){
+		long lastTime = System.nanoTime();
+		double amountOfTicks = 60.0;
+		double ns = 1000000000 / amountOfTicks;
+		double delta = 0;
+		long timer = System.currentTimeMillis();
+		int frames = 0;
+		while(isRunning){
+			long now = System.nanoTime();
+			delta += (now - lastTime) / ns;
+			lastTime = now;
+
+			while(delta >=1){
+				update();
+				delta--;
+			}
+
+			if(isRunning){
+				render();
+
+			}
+
+			frames++;
+
+			if(System.currentTimeMillis() - timer > 1000){
+				timer += 1000;
+				System.out.println("FPS: "+ frames);
+				frames = 0;
+			}
+			
+			
+		}
+	}
+	
+	public void render(){
+		
+		Graphics2D g = (Graphics2D) buffer.getDrawGraphics();
+
+		g.setColor(Color.black);
+		g.fillRect(0, 0, WIDTH, HEIGHT);
+
+		handler.render(g);
+		hud.render(g);
+		
+		g.dispose();
+		buffer.show();
+	}
+	
+	public void update(){
+		handler.update();
+		if(kills == neededKills){
+			neededKills *= 1.5;
+			wave = lastWave + 1;
+			lastWave++;
+			kills = 0;
+			hud.level++;
+		}
+		
+		if(hud.width<=0){
+			saveGame.addRecords();
+			saveGame.closeFile();
+			
+		}
+		spawn.spawner();
+		
+	}
+
+}

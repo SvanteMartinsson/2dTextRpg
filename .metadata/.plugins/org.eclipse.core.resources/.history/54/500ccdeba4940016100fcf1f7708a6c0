@@ -1,0 +1,22 @@
+package com.shooter.core;
+
+public class SaveGame {
+	
+	Main game;
+	HUD hud;
+	
+	
+	public SaveGame(Main game, HUD hud){
+		this.game = game;
+		this.hud = hud;
+	}
+	
+	public void addRecords(){
+		game.saveFile.format("%s %s", hud.level, hud.kills);
+	}
+	
+	public void closeFile(){
+		game.saveFile.close();
+	}
+	
+}

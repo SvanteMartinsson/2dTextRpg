@@ -1,0 +1,101 @@
+package com.shooter.core;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+public class Player extends GameObject{
+	
+	int speed = 5;
+	
+	Handler handler;
+	HUD hud;
+	Main game;
+	
+	
+	public Player(int x, int y, Handler handler, ID id, HUD hud, Main game){
+		setX(x);
+		setY(y);
+		this.handler = handler;
+		setID(id);
+		this.hud = hud;
+		this.game = game;
+	}
+	
+	public void render(Graphics g) {
+		
+		g.setColor(Color.red);
+		g.fillRect(getX(), getY(), 32, 32);
+		
+	}
+
+	@Override
+	public void update() {
+		x += velX;
+		y += velY;
+		
+		if(UP == true){
+			y-=speed;
+			dir = 1;
+		}
+		
+		if(DOWN == true){
+			y+= speed;
+			dir = 2;
+		}
+		
+		if(LEFT == true){
+			x -= speed;
+			dir = 3;
+		}
+		
+		if(RIGHT == true){
+			x += speed;
+			dir = 4;
+		}
+		
+		collision();
+		
+	}
+	
+	public void collision(){
+		for(int i = 0; i < handler.object.size(); i++){
+			GameObject tempObject = handler.object.get(i);
+			if(getBounds().intersects(tempObject.getBounds()) && tempObject.getID() == ID.Enemy){
+				
+				hud.width -= 2;
+				if(hud.width<= 0){
+					handler.removeObject(this);
+				}
+			}
+		}
+		
+		if(y>game.HEIGHT-55){
+			y-=speed;
+		}
+		
+	}
+	
+	public void setUP(boolean UP){
+		this.UP = UP;
+	}
+	
+	public void setDOWN(boolean DOWN){
+		this.DOWN = DOWN;
+	}
+	
+	public void setLEFT(boolean LEFT){
+		this.LEFT = LEFT;
+	}
+	
+	public void setRIGHT(boolean RIGHT){
+		this.RIGHT = RIGHT;
+	}
+
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return new Rectangle(x, y, 32, 32);
+	}
+	
+}

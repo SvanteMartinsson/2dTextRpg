@@ -1,0 +1,11 @@
+package com.shooter.core;
+
+public class SaveGame {
+	
+	Main game;
+	
+	public SaveGame(Main game){
+		this.game = game;
+	}
+	
+}

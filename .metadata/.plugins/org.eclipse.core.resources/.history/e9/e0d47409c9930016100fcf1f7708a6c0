@@ -1,0 +1,82 @@
+package com.shooter.core;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class KeyInput extends KeyAdapter{
+	
+	Handler handler;
+	int dir;
+	
+	boolean shot = false;
+	
+	public KeyInput(Handler handler){
+		this.handler = handler;
+	}
+	
+	public void keyPressed(KeyEvent e){
+		int key = e.getKeyCode();
+		
+		for(int i = 0; i<handler.object.size(); i++){
+			GameObject tempObject = handler.object.get(i);
+			
+			if(key == KeyEvent.VK_W){
+				tempObject.UP = true;
+				
+				
+			}
+			if(key == KeyEvent.VK_S){
+				tempObject.DOWN = true;
+				
+				
+			}
+			if(key == KeyEvent.VK_A){
+				tempObject.LEFT = true;
+				
+				
+			}
+			if(key == KeyEvent.VK_D){
+				tempObject.RIGHT = true;
+				
+				
+			}
+			if(key == KeyEvent.VK_SPACE){
+				if(shot == false){
+				handler.addObject(new Bullet(tempObject.getX(), tempObject.getY(), tempObject, tempObject.getDir(), handler, ID.Bullet));
+				
+				}
+				
+			}
+		}
+		
+		if(key == KeyEvent.VK_ESCAPE){
+			System.exit(0);
+		}
+	}
+	
+	public void keyReleased(KeyEvent e){
+		int key = e.getKeyCode();
+		
+		for(int i = 0; i<handler.object.size(); i++){
+			GameObject tempObject = handler.object.get(i);
+			
+			if(key == KeyEvent.VK_W){
+				tempObject.UP = false;
+			}
+			if(key == KeyEvent.VK_S){
+				tempObject.DOWN = false;
+			}
+			if(key == KeyEvent.VK_A){
+				tempObject.LEFT = false;
+			}
+			if(key == KeyEvent.VK_D){
+				tempObject.RIGHT = false;
+			}
+		}
+	}
+	
+	public void keyTyped(KeyEvent e){
+		
+	}
+
+}

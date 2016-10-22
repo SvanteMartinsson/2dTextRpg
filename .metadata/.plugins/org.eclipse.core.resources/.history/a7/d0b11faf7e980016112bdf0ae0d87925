@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Uppgift8 {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int år = 0;
+		
+		System.out.print("Skriv in ett årtal: ");
+
+	}
+
+}

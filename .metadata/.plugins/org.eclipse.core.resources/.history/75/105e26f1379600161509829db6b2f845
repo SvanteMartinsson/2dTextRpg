@@ -1,0 +1,30 @@
+
+public class uppgift2M4 {
+
+	public static void main(String[] args) {
+		 
+        int[] talArray = {56, 12, 11, 25};
+    	
+        int temp;
+        
+        temp = talArray[0];
+        talArray[0] = talArray[1];
+        talArray[1] = temp;
+        
+        if(talArray[1]<talArray[0]){
+        	int temp2 = talArray[0];
+        	talArray[0] = talArray[1];
+        	talArray[1] = temp2;
+        	
+        }
+        
+        if(talArray[2]<talArray[1]){
+        	int temp3 = talArray[1];
+        	talArray[1] = talArray[2];
+        	talArray[2] = temp3;
+        }
+    	
+    	  System.out.println(talArray[0] + ", " + talArray[1] + ", " + talArray[2] + ", " +talArray[3]);
+    }
+}
+

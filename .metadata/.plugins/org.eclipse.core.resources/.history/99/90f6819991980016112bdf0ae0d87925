@@ -1,0 +1,9 @@
+
+public class Uppgift1 {
+
+	public static void main(String[] args) {
+		int[] nummer = new int[5];
+
+	}
+
+}

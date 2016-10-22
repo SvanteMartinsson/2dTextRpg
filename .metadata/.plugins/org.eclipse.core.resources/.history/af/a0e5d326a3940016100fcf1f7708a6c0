@@ -1,0 +1,5 @@
+package com.shooter.core;
+
+public class SaveGame {
+
+}

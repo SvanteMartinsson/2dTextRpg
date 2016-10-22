@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Uppgift4 {
+
+	public static void main(String[] args) {
+		int[] array = new int[0];
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int counter= 0;
+		
+		int val;
+		
+		float inTal = 0;
+		
+		boolean loop = true;
+		
+		while(loop){
+			System.out.print("Skriv in ett decimaltal: ");
+			inTal = scanner.nextFloat();
+			counter++;
+			
+			System.out.print("Vill du skriva in ett till tal? ja=1 nej=2 : ");
+			val = scanner.nextInt();
+			
+			if(val == 2)
+				loop = false;
+		}
+
+	}
+
+}

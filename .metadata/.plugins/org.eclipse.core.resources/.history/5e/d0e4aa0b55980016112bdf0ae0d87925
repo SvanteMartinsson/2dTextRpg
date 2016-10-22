@@ -1,0 +1,45 @@
+package com.shooter.core;
+
+import java.util.Scanner;
+
+public class Uppgift6 {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		String inOrd;
+		
+		inOrd = scanner.nextLine();
+		
+		switch(inOrd){
+		
+		case "hund":
+			
+			break;
+		
+		case "musik":
+			
+			break;
+		
+		case "sol":
+			
+			break;
+		
+		case "hej":
+			
+			break;
+		
+		case "nej":
+			
+			break;
+			
+			default: 
+				System.out.println(inOrd + " finns inte i lexikonet");
+				break;
+		
+		}
+
+	}
+
+}

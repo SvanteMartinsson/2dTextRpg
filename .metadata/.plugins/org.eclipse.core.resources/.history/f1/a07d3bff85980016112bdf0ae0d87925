@@ -1,0 +1,43 @@
+
+public class uppgift2M4 {
+
+	public static void main(String[] args) {
+		 
+        int[] talArray = {56, 12, 11, 25};
+    	
+        int temp;
+        
+        temp = talArray[0];
+        talArray[0] = talArray[1];
+        talArray[1] = temp;
+        
+        System.out.println(talArray[0] + ", " + talArray[1] + ", " + talArray[2] + ", " +talArray[3]);
+        
+        if(talArray[1]<talArray[0]){
+        	temp = talArray[0];
+        	talArray[0] = talArray[1];
+        	talArray[1] = temp;
+        }
+        
+        System.out.println(talArray[0] + ", " + talArray[1] + ", " + talArray[2] + ", " +talArray[3]);
+        
+        if(talArray[2]<talArray[1]){
+        	temp = talArray[1];
+        	talArray[1] = talArray[2];
+        	talArray[2] = temp;
+        }
+        
+        System.out.println(talArray[0] + ", " + talArray[1] + ", " + talArray[2] + ", " +talArray[3]);
+        
+        temp = talArray[0];
+        talArray[0] = talArray[1];
+        talArray[1] = temp;
+        
+        temp = talArray[2];
+        talArray[2] = talArray[3];
+        talArray[3] = temp;
+    	
+    	  System.out.println(talArray[0] + ", " + talArray[1] + ", " + talArray[2] + ", " +talArray[3]);
+    }
+}
+

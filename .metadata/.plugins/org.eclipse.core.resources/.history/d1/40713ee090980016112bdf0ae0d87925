@@ -1,0 +1,16 @@
+
+public class Uppgift5 {
+
+	public static void main(String[] args) {
+		
+		int[] talArray = {56, 12, 11, 25};
+		
+		int temp;
+		temp = talArray[0];
+		talArray[0] = talArray[2];
+		
+		
+
+	}
+
+}

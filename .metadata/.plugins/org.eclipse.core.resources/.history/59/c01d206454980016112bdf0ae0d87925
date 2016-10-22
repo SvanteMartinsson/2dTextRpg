@@ -1,0 +1,18 @@
+package com.shooter.core;
+
+public class Uppgift6 {
+
+	public static void main(String[] args) {
+		
+		String[] ord = new String[4];
+		
+		ord[0] = "hund";
+		ord[1] = "musik";
+		ord[2] = "sol";
+		ord[3] = "hej";
+		ord[4] = "nej";
+		
+
+	}
+
+}

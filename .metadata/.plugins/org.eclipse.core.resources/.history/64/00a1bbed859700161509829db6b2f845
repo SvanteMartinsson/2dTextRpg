@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Uppgift3 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		int age;
+		
+		System.out.print("Skriv in din ålder: ");
+		
+
+	}
+
+}

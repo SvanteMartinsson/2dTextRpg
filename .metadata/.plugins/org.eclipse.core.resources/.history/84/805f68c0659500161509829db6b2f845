@@ -1,0 +1,16 @@
+import java.util.Random;
+
+public class Uppgift7 {
+
+	public static void main(String[] args) {
+		Random r = new Random();
+		
+		int tärning1;
+		int tärning2;
+		
+		tärning1 = r.nextInt(6) + 1;
+		
+
+	}
+
+}

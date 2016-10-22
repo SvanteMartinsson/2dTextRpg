@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Uppgift1 {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		float längd = 0;
+		
+		System.out.print("Skriv in längd: ");
+		längd = input.nextFloat();
+		
+		
+
+	}
+
+}
